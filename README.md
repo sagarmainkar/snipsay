@@ -1,4 +1,4 @@
-# Whisper Hotkey
+# SnipSay
 
 **Voice-to-clipboard on macOS.** Press a hotkey to start recording, press again to stop — your speech is transcribed locally with OpenAI Whisper and automatically copied to your clipboard.
 
@@ -6,13 +6,12 @@
 - 🔒 **Private** — 100% offline, no data leaves your machine
 - 💰 **Free** — No API keys, no subscriptions
 - 🍎 **Native** — Uses system sounds and clipboard
-- ⚡ **Auto-paste** — Automatically pastes where your cursor is
 
 ## Quick Start
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/whisper-hotkey.git
-cd whisper-hotkey
+git clone https://github.com/YOUR_USERNAME/snipsay.git
+cd snipsay
 ./setup.sh
 ./start.sh
 ```
@@ -22,7 +21,7 @@ Press **Ctrl+Shift+Space** to start recording, press again to stop and transcrib
 ## Requirements
 
 - macOS (Intel or Apple Silicon)
-- [Homebrew](https://brew.sh) — `brew install --cask hammerspoon`
+- [Homebrew](https://brew.sh)
 - [Hammerspoon](https://www.hammerspoon.org/) — `brew install --cask hammerspoon`
 - Microphone access
 
@@ -52,23 +51,17 @@ brew install --cask hammerspoon
 |--------|--------|
 | **Ctrl+Shift+Space** | Start recording |
 | **Ctrl+Shift+Space** | Stop & transcribe |
-| **Ctrl+V** | Paste (or auto-paste if enabled) |
+| **Cmd+V** | Paste transcribed text |
 
 ## Configuration
 
-Edit `~/whisper-hotkey/config.lua` to customize:
+Edit `~/snipsay/config.lua` to customize your hotkey:
 
 ```lua
 return {
     -- Hotkey modifiers and key
     hotkey_modifiers = {"ctrl", "shift"},
     hotkey_key = "space",
-    
-    -- Auto-paste after transcription
-    auto_paste = true,
-    
-    -- Play sound effects
-    play_sounds = true,
 }
 ```
 
@@ -130,8 +123,6 @@ After changing config, click **Reload Config** in the menubar.
 - **🎙** — Idle
 - **🔴** — Recording
 
-Right-click for options, or toggle auto-paste.
-
 ### Recording Length
 
 Supports up to **30+ minutes** of continuous recording.
@@ -139,8 +130,8 @@ Supports up to **30+ minutes** of continuous recording.
 ## Auto-Start on Login (Optional)
 
 ```bash
-ln -sf ~/whisper-hotkey/com.whisperhotkey.backend.plist ~/Library/LaunchAgents/
-launchctl load ~/Library/LaunchAgents/com.whisperhotkey.backend.plist
+ln -sf ~/snipsay/com.snipsay.backend.plist ~/Library/LaunchAgents/
+launchctl load ~/Library/LaunchAgents/com.snipsay.backend.plist
 ```
 
 ## Troubleshooting
@@ -169,8 +160,8 @@ Tested on **MacBook Pro 16,1 (2019, Intel i7, 16GB RAM)**:
 ## Project Structure
 
 ```
-whisper-hotkey/
-├── config.lua              # User configuration (hotkey, auto-paste)
+snipsay/
+├── config.lua              # User configuration (hotkey)
 ├── init.lua               # Hammerspoon config
 ├── setup.sh              # One-command installer
 ├── start.sh              # Start the backend

@@ -9,8 +9,8 @@
 
 local SOCKET_PATH = "/tmp/whisper_hotkey.sock"
 
--- Load configuration
-local config = dofile(os.getenv("HOME") .. "/whisper-hotkey/config.lua")
+-- Load configuration from user's snipsay folder
+local config = dofile(os.getenv("HOME") .. "/snipsay/config.lua")
 
 local isRecording = false
 
