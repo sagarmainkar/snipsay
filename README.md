@@ -9,7 +9,7 @@
 
 ## Demo Video
 
-🎬 [Watch the demo](https://github.com/sagarmainkar/snipsay/releases/latest)
+🎬 [Watch the demo](https://github.com/sagarmainkar/snipsay/releases/download/v1.0.0/demo.mp4)
 
 ## Quick Start
 
