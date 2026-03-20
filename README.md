@@ -1,7 +1,5 @@
 # SnipSay
 
-https://github.com/user/snipsay/assets/demo.mp4
-
 **Voice-to-clipboard on macOS.** Press a hotkey to start recording, press again to stop — your speech is transcribed locally with OpenAI Whisper and automatically copied to your clipboard.
 
 - 🎯 **Fast** — Records and transcribes in seconds
@@ -9,10 +7,14 @@ https://github.com/user/snipsay/assets/demo.mp4
 - 💰 **Free** — No API keys, no subscriptions
 - 🍎 **Native** — Uses system sounds and clipboard
 
+## Demo Video
+
+🎬 [Watch the demo](https://github.com/sagarmainkar/snipsay/releases/latest)
+
 ## Quick Start
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/snipsay.git
+git clone https://github.com/sagarmainkar/snipsay.git
 cd snipsay
 ./setup.sh
 ./start.sh
